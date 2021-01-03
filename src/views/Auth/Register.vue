@@ -6,7 +6,7 @@
         <form action="#" @submit.prevent="register">
           
           <div class="field">
-            <label class="label">Name</label>
+            <label class="label">Nombre</label>
             <div class="control">
               <input class="input" type="text" placeholder="e.g Alex Smith" v-model="name">
             </div>

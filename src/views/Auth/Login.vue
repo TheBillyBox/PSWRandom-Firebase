@@ -22,6 +22,14 @@
                         <button type="submit" class="button is-primary">Iniciar sesión</button>
                     </div>
                 </form>
+                <div>
+                    <router-link to="/resetpsw" class="button mt-5 m-3 optionlogin" v-if="error">
+                        Me he olvidado la Contraseña
+                    </router-link>
+                    <router-link to="/register" class="button mt-5 optionlogin" v-if="error">
+                       Registrarme
+                    </router-link>
+                </div>
                 <div class="notification is-danger mt-10" v-if="error">
                     {{error}}
                 </div>
@@ -52,6 +60,7 @@ export default {
                         console.log(user)
                     }).catch(err => {
                         this.error = err.message
+                        this.password = ''
                     })
                 
             }else{

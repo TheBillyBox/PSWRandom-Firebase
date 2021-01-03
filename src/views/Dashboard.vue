@@ -1,42 +1,38 @@
 <template>
     <div class=" mt-6 p-4 maxwidth-50x is-justify-content-center">
             <h1 class="title is-3 mt-10 has-text-centered">Generador de contraseñas</h1>
-            <form class="ml-4 is-align-content-center" >
-                <h2 class="subtitle is-4">Características</h2>
+            <form class="ml-4 is-align-content-center optionnavbar" >
+                <h2 class="subtitle is-4"> - Opciones</h2>
                 <div class="control">
                     <input type="checkbox" id="numbers" v-model="numbers" @change="generate()">
-                    <label for="numbers" v-if="numbers">Números incluídos</label>
-                    <label for="numbers" v-else class="red">No incluir números</label>
+                    <label class="optionnavbar">Números </label>
                 </div>
-                <p>
+                <div class="pt-1">
                     <input type="checkbox" class="checkbox" id="mayus" v-model="mayus" @change="generate()">
-                    <label for="mayus" v-if="mayus">Mayúsculas incluídas</label>
-                    <label for="mayus" v-else class="red">No incluir mayusculas</label>
-                </p>
-                <p>
+                    <label>Mayúsculas </label>
+                </div>
+                <div class="pt-1">
                     <input type="checkbox" id="minus" v-model="minus" @change="generate()">
-                    <label for="minus" v-if="minus">Minúsculas incluídas</label>
-                    <label for="minus" v-else class="red">No incluir minúsculas</label>
-                </p>
-                <p>
+                    <label>Minúsculas </label>
+                </div>
+                <div class="pt-1">
                     <input type="checkbox" id="symbols" v-model="symbols" @change="generate()">
-                    <label for="symbols" v-if="symbols">Símbolos y caracteres especiales incluídos</label>
-                    <label for="symbols" v-else class="red">No incluir símbolos o caracteres especiales</label>
-                </p>
+                    <label for="symbols">Símbolos y caracteres especiales</label>
+                </div>
                 
-                <p>
+                <div class="pt-1">
                     <label for="size" style="padding-right: 5px">Número de caracteres</label>
-                    <input type="number" class="is-hovered" min="1" id="size" v-model="size" @change="generate()">
-                </p>
-                <p>
-                    <label for="size" style="padding-right: 5px">Caracteres a evitar</label>
-                    <input type="text" id="avoid" v-model="avoid" placeholder="Ejemplo: i l I |" @change="generate()">
-                </p>
+                    <input type="number" class="is-hovered" min="1" id="size" style="max-width: 4em" v-model="size" @change="generate()">
+                </div>
+                <div class="pt-1">
+                    <label for="size" style="padding-right: 5px">Evitar estos caracteres</label>
+                    <input type="text" style="min-height: 2.5em" id="avoid" v-model="avoid" placeholder="Ejemplo: i l I |" @change="generate()">
+                </div>
             </form>
             <section class="ml-4">
                 <div class='row'>
                     <div class="column">
-                        <input class="input is-small maxwidth-400px" id="generated" placeholder="Contraseña" :type="hidden ? 'password' : 'text'" readonly :value="password">
+                        <input class="input maxwidth-400px" id="generated" placeholder="Contraseña" :type="hidden ? 'password' : 'text'" readonly :value="password">
                     </div>
                     <p style="padding: 5px 0 10px 0">
                     <input type="checkbox" id="hidden" v-model="hidden" @change="generate()">
@@ -44,7 +40,7 @@
                     <label for="hidden" v-else>Ocultar contraseña</label>
                 </p>
                 </div>
-                <button class="button mb-2 ml-6" type="button" @click="generate()">Generar otra</button>
+                <button class="button mb-2 ml-6" type="button" @click="generate()">Generar otra contraseña</button>
             </section>
         </div>
     
@@ -79,8 +75,6 @@
         },
         methods: {
             generate() {
-                this.copy.copied = false;
-                this.copy.texto = '🔖 ¡Copiar!';
                 let characterList = '';
                 let password = '';
                 if (this.minus) {

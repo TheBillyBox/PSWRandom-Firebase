@@ -13,6 +13,9 @@
 .mr-4em{
     margin-right: 4em;
 }
+.m10{
+    margin: 2em 10em 0 10em;
+}
 .maxwidth-400px{
     max-width: 400px;
 }
@@ -22,6 +25,21 @@
     border-radius: 20px;
     background-color: lightblue;
 }
-p{
-    padding-top: 5px;
+.divbuttomlogin{
+    margin: auto;
+    display: flex;
+    max-width: fit-content;
+    margin-top: 2em;
+}
+.optionnavbar{
+    font-size: 1.2em;
+}
+.optionlogin{
+    display: inline-block;
+    max-width: fit-content;
+    margin-top: 2em;
+}
+.optionresetpsw{
+    display: inline-block;
+    margin-top: 2em;
 }

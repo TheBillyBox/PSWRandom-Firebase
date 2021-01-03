@@ -5,7 +5,8 @@ import Login from '../views/Auth/Login.vue'
 import Register from '../views/Auth/Register.vue'
 import Dashboard from '../views/Dashboard.vue'
 import firebase from 'firebase'
-import Settings from '../views/Settings.vue'
+import Porfile from '../views/Auth/Porfile.vue'
+import Resetpsw from '../views/Auth/Resetpsw.vue'
 
 Vue.use(VueRouter)
 
@@ -34,13 +35,19 @@ const routes = [
       }
   },
   {
-    path: '/settings',
-      name: 'settings',
-      component: Settings,
+    path: '/porfile',
+      name: 'porfile',
+      component: Porfile,
       meta: {
         requiresAuth: true
       }
+  },
+  {
+    path: '/resetpsw',
+    name: 'resetpsw',
+    component: Resetpsw
   }
+  
   
 ]
 
