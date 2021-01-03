@@ -1,4 +1,4 @@
-# myproject
+# PSWRandom && Firebase
 
 ## Project setup
 ```
