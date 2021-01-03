@@ -9,16 +9,7 @@ npm install
 ```
 npm run serve
 ```
-
-### Compiles and minifies for production
+### Add firebase config
 ```
-npm run build
+go to src/firebase/init.js and add your firebase project config
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
